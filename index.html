@@ -6,14 +6,73 @@
     <title>Fuliang Liu's Personal Homepage</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-img {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .publication-item {
+            margin-bottom: 1rem;
+        }
+        .pdf-link {
+            color: #dc3545;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+        .pdf-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-                <h1>刘复良 (Fuliang Liu)</h1>
-                <p class="lead">南京大学 (Nanjing University)</p>
-                <p>计算机博士 (Computer Science PhD Student)</p>
+        <!-- Profile Section -->
+        <div class="section">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <!-- Placeholder for profile image -->
+                    <img src="path/to/your/photo.jpg" alt="Fuliang Liu" class="profile-img">
+                </div>
+                <div class="col-md-8">
+                    <h1>刘复良 (Fuliang Liu)</h1>
+                    <p class="lead mb-2">Ph.D. Student in Computer Science</p>
+                    <p class="mb-2">Nanjing University</p>
+                    <p class="mb-2">Email: your.email@example.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Interests Section -->
+        <div class="section">
+            <h2>Research</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">[Your research interests and focus areas will be added here.]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications Section -->
+        <div class="section">
+            <h2>Publications</h2>
+            <div class="publication-list">
+                <!-- Publication Item Template -->
+                <div class="publication-item">
+                    <p>
+                        [Authors]. [Year]. [Paper Title]. [Conference/Journal Name].
+                        <a href="pdfs/paper1.pdf" class="pdf-link">[PDF]</a>
+                    </p>
+                </div>
+                <div class="publication-item">
+                    <p>
+                        [Authors]. [Year]. [Paper Title]. [Conference/Journal Name].
+                        <a href="pdfs/paper2.pdf" class="pdf-link">[PDF]</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
