@@ -18,7 +18,7 @@ const research = [
 
 export default function ResearchSection() {
   return (
-    <section id="research" className="py-32 px-6">
+    <section id="research" className="py-32 px-6 snap-start">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}

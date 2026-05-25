@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 
 function useTypewriter(texts: string[], speed = 80, pause = 2500) {
@@ -49,13 +50,28 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex items-center justify-center snap-start"
     >
       <div className="text-center space-y-5">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center"
+        >
+          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-gray-100">
+            <img
+              src="/me.jpg"
+              alt="Fuliang Liu"
+              className="object-cover object-top w-full h-full"
+            />
+          </div>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900"
         >
           Fuliang Liu

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <ParticleBackground />
-      <div className="min-h-screen text-gray-900 relative z-10">
+      <div className="h-screen overflow-y-auto text-gray-900 relative z-10 snap-y snap-mandatory scroll-smooth">
         <Navbar />
         <HeroSection />
         <AboutSection />

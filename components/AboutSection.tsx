@@ -49,7 +49,7 @@ const experience = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="py-32 px-6 snap-start">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}

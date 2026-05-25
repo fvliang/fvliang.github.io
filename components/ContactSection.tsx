@@ -23,7 +23,7 @@ const links = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-32 px-6 snap-start">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
