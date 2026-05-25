@@ -48,7 +48,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="flex justify-center gap-6"
+          className="flex justify-center gap-4 sm:gap-6 flex-wrap"
         >
           {links.map((link) => (
             <TiltCard

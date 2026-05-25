@@ -24,7 +24,8 @@ export default function ParticleBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const count = 120;
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 50 : 120;
     particles.current = [];
     for (let i = 0; i < count; i++) {
       particles.current.push({

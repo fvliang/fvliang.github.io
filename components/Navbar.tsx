@@ -12,6 +12,7 @@ const navItems = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,7 +23,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || menuOpen
           ? "bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm"
           : "bg-transparent"
       }`}
@@ -34,6 +35,8 @@ export default function Navbar() {
         >
           Fuliang Liu
         </a>
+
+        {/* Desktop nav */}
         <div className="hidden md:flex gap-8">
           {navItems.map((item) => (
             <a
@@ -45,7 +48,38 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 text-gray-600"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {menuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 px-6 py-4 space-y-3">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="block text-gray-600 hover:text-sky-600 transition-colors text-sm"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

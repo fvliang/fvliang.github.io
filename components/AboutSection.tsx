@@ -115,7 +115,7 @@ export default function AboutSection() {
                   </div>
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-baseline justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0 sm:gap-4">
                       <h4
                         className="font-semibold text-base"
                         style={{ color: edu.color }}
@@ -188,7 +188,7 @@ export default function AboutSection() {
                   </div>
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-baseline justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0 sm:gap-4">
                       <h4
                         className="font-semibold text-base"
                         style={{ color: exp.color }}
