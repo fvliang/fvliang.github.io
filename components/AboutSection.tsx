@@ -70,11 +70,11 @@ export default function AboutSection() {
         >
           <p>
             I am a Ph.D. candidate in the{" "}
-            <a href="https://cs.nju.edu.cn/cs_en/" target="_blank" rel="noopener noreferrer" className="text-purple-700 hover:underline font-medium">
+            <a href="https://cs.nju.edu.cn/cs_en/" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium" style={{ color: "#7a2282" }}>
               School of Computer Science
             </a>{" "}
             at{" "}
-            <a href="https://www.nju.edu.cn/en/" target="_blank" rel="noopener noreferrer" className="text-purple-700 hover:underline font-medium">
+            <a href="https://www.nju.edu.cn/en/" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium" style={{ color: "#7a2282" }}>
               Nanjing University
             </a>
             . My research focuses on building efficient systems for Large Language Models.
