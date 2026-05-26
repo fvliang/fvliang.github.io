@@ -123,6 +123,14 @@ export default function HeroSection() {
           >
             Contact
           </a>
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 text-sm border border-gray-300 text-gray-600 rounded-md hover:border-gray-400 hover:text-gray-900 transition-colors"
+          >
+            CV
+          </a>
         </motion.div>
 
         <motion.div
