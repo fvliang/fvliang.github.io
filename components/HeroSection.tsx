@@ -131,6 +131,14 @@ export default function HeroSection() {
           >
             CV
           </a>
+          <a
+            href="https://fuliang.space/claw_notes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 text-sm border border-gray-300 text-gray-600 rounded-md hover:border-gray-400 hover:text-gray-900 transition-colors"
+          >
+            {"Fuliang's ClawNotes"}
+          </a>
         </motion.div>
 
         <motion.div

@@ -2,12 +2,19 @@
 
 import { useState, useEffect } from "react";
 
-const navItems = [
+type NavItem = { label: string; href: string; external?: boolean };
+
+const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },
   { label: "Others", href: "#others" },
+  {
+    label: "ClawNotes",
+    href: "https://fuliang.space/claw_notes/",
+    external: true,
+  },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -43,6 +50,8 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               className="text-gray-600 hover:text-sky-600 transition-colors duration-200 text-sm tracking-wide"
             >
               {item.label}
@@ -73,6 +82,8 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               onClick={() => setMenuOpen(false)}
               className="block text-gray-600 hover:text-sky-600 transition-colors text-sm"
             >
