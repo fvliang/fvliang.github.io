@@ -5,17 +5,16 @@ import { useState, useEffect } from "react";
 type NavItem = { label: string; href: string; external?: boolean };
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Research", href: "#research" },
-  { label: "Publications", href: "#publications" },
-  { label: "Others", href: "#others" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Publications", href: "/#publications" },
+  { label: "Others", href: "/others" },
   {
     label: "ClawNotes",
     href: "https://fuliang.space/claw_notes/",
     external: true,
   },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {

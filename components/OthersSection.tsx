@@ -32,7 +32,7 @@ export default function OthersSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-4xl font-bold mb-12 bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-12 text-sky-600"
         >
           Others
         </motion.h2>
@@ -45,7 +45,7 @@ export default function OthersSection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <TiltCard className="p-6 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl shadow-sm">
+              <TiltCard className="p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   {item.title}
                 </h3>

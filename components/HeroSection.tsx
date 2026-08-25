@@ -112,10 +112,10 @@ export default function HeroSection() {
           className="flex gap-3 justify-center pt-4"
         >
           <a
-            href="#research"
+            href="#publications"
             className="px-5 py-2.5 text-sm bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors"
           >
-            Research
+            Publications
           </a>
           <a
             href="#contact"
