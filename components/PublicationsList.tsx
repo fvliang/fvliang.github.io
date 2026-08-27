@@ -86,7 +86,7 @@ const publications: Publication[] = [
       "Fuliang Liu, Xue Li, Ketai Zhao, Yinxi Gao, Ziyan Zhou, Zhonghui Zhang, Wanchun Dou, Sheng Zhong, Zhibin Wang, Chen Tian",
     venue: {
       full: "Conference on Empirical Methods in Natural Language Processing, 2026",
-      abbr: "EMNLP26",
+      abbr: "EMNLP'26",
       detail: "Main Conference (AR: 15.4%, 2719/17669)",
     },
     links: {
