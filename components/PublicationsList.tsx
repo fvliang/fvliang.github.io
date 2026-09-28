@@ -9,21 +9,28 @@ function CodeLink({ github }: { github: string }) {
   const repo = match?.[1];
   const stars = repo ? (starsByRepo as Record<string, number>)[repo] : undefined;
   return (
-    <a
-      href={github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-sky-600 hover:underline"
-    >
-      {" [Github]"}
+    <span>
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sky-600 hover:underline"
+      >
+        {"[Github]"}
+      </a>
       {typeof stars === "number" && (
-        <span className="text-yellow-600">
-          {"<star:"}
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-600"
+        >
+          {" <star:"}
           {stars}
           {">"}
-        </span>
+        </a>
       )}
-    </a>
+    </span>
   );
 }
 
@@ -42,8 +49,7 @@ type Publication = {
   links: { pdf: string; github?: string };
 };
 
-const isFirstAuthor = (pub: Publication) =>
-  pub.authors.split(",")[0].trim() === MY_NAME;
+const isPublished = (pub: Publication) => pub.venue.full !== "arXiv";
 
 function Authors({ authors, venue }: { authors: string; venue: Venue }) {
   return (
@@ -54,7 +60,7 @@ function Authors({ authors, venue }: { authors: string; venue: Venue }) {
           <span key={i}>
             {i > 0 && ", "}
             {trimmed === MY_NAME ? (
-              <strong className="font-semibold text-gray-800">{trimmed}</strong>
+              <strong className="font-extrabold text-gray-900">{trimmed}</strong>
             ) : (
               trimmed
             )}
@@ -71,6 +77,15 @@ function Authors({ authors, venue }: { authors: string; venue: Venue }) {
 }
 
 const publications: Publication[] = [
+  {
+    title: "When Parallel Drafter Meets Parallel Speculative Decoding",
+    authors:
+      "Fuliang Liu, Xue Li, Kun Qian, Zhibin Wang, Wanchun Dou, Wenyuan Yu, Chen Tian",
+    venue: { full: "arXiv", detail: "September 2026" },
+    links: {
+      pdf: "https://arxiv.org/abs/2609.27396",
+    },
+  },
   {
     title: "SpecLA: Efficient Speculative Decoding for Linear-Attention Models",
     authors:
@@ -99,9 +114,9 @@ const publications: Publication[] = [
 export function PublicationsList() {
   return (
     <div className="space-y-6">
-      {/* My first-author papers first; stable sort keeps time order within each group */}
+      {/* Published papers first; stable sort keeps arXiv time order within each group */}
       {[...publications]
-        .sort((a, b) => Number(isFirstAuthor(b)) - Number(isFirstAuthor(a)))
+        .sort((a, b) => Number(isPublished(b)) - Number(isPublished(a)))
         .map((pub, i) => (
           <motion.div
             key={i}
@@ -114,17 +129,23 @@ export function PublicationsList() {
               <h3 className="text-base font-semibold mb-1 text-sky-600">
                 {pub.title}
                 {pub.links.pdf && (
-                  <a
-                    href={pub.links.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sky-600 hover:underline"
-                  >
-                    {" [PDF]"}
-                  </a>
+                  <span>
+                    {" "}
+                    <a
+                      href={pub.links.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-600 hover:underline"
+                    >
+                      {"[PDF]"}
+                    </a>
+                  </span>
                 )}
                 {pub.links.github && (
-                  <CodeLink github={pub.links.github} />
+                  <span>
+                    {" "}
+                    <CodeLink github={pub.links.github} />
+                  </span>
                 )}
               </h3>
               <Authors authors={pub.authors} venue={pub.venue} />
